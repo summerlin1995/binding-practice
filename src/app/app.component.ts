@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'binding-practice';
+  oddNumbers: number[] = [];
+  evenNumbers: number[] = [];
   onIntervalFired(firedNumber: number){
-    console.log(firedNumber);
+    if (firedNumber % 2 === 0){
+      return this.evenNumbers.push(firedNumber);
+    } else {
+      return this.oddNumbers.push(firedNumber);
+    }
   }
 }
